@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  check_earnings:
+  analizandos_datos:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,4 +20,7 @@ jobs:
       - name: Run command in the vm
         run: |
           echo "Ejemplo de un Action"
-          ls -lhrt
+          cat datos.csv
+          echo "filtrando datos"
+          grep -iv hotmail datos.csv
+          
