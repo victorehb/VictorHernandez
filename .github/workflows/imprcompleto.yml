@@ -36,10 +36,10 @@ jobs:
           git diff --cached --exit-code || git commit -m "tabla actualizada" --allow-empty
           git push --force-with-lease origin HEAD:main
 
-  viendo_datos:
-    needs: analizando_datos
-    runs-on: macos-12
-    steps:
+   viendo_datos:
+     needs: analizando_datos
+     runs-on: macos-12
+     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
