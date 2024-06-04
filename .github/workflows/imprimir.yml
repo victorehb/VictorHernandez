@@ -1,4 +1,4 @@
-name: ejemplo
+name: imprimir datos y filtrar
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  analizandos_datos:
+  analizando_datos:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -17,9 +17,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run command in the vm
+      - name: imprimir tabla bruta y neta
         run: |
-          echo "Ejemplo de un Action"
+          echo "tabla desde la fuente"
           cat datos.csv
           echo "filtrando datos"
           grep -iv hotmail datos.csv
